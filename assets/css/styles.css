@@ -1,5 +1,6 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 /*==================== VARIABLES CSS ====================*/
 :root {
@@ -158,7 +159,7 @@ img {
 
 /*==================== LAYOUT ====================*/
 .container {
-    max-width: 768px;
+    max-width: 770px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
 }
@@ -254,6 +255,20 @@ img {
     color: var(--first-color-alt);
 }
 
+.nav__circle{
+    padding-right: 1rem;
+}
+
+.circle__green{
+    color: hsl(142, 69%, 61%);
+    cursor: pointer;
+}
+
+.circle__purple{
+    color: hsl(250, 69%, 61%);
+    cursor: pointer;
+}
+
 /* show menu */
 .show-menu {
     bottom: 0;
@@ -273,6 +288,9 @@ img {
 .home__container {
     gap: 1rem;
 }
+.home__container-img{
+    display: flex;
+}
 
 .home__content {
     grid-template-columns: .5fr 3fr;
@@ -287,12 +305,59 @@ img {
 }
 
 .home__social-icon {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--first-color);
 }
 
 .home__social-icon:hover {
     color: var(--first-color-alt);
+}
+
+.blob__container,
+.blob__container2,
+.blob__container3{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.blob__container{
+    margin-bottom: 3rem;
+}
+
+.blob__container2{
+    margin-top: 3rem;
+}
+
+.blob__container3{
+    margin-top: 0.8rem;
+}
+
+.blob,
+.blob2,
+.blob3{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 2rem 8rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2rem 8rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 114px;
+    height: 240px;
+}
+
+.img__central{
+    width: 100%;
+    height: 100%;
 }
 
 .home__blob {
@@ -498,8 +563,7 @@ codersrank-skills-chart {
 
 /*==================== SKILLS ====================*/
 .skills__body{
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding: 3rem 2rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -558,71 +622,12 @@ codersrank-skills-chart {
     color: var(--first-color);
 }
 
-.skills__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--mb-2-5);
-    cursor: pointer;
-}
-
 .skills__logos{
     width: 100%;
     height: 100%;
 }
 
-.skills__icon,
-.skills__arrow {
-    font-size: 2rem;
-    color: var(--first-color);
-}
 
-.skills__icon {
-    margin-right: var(--mb-0-75);
-}
-
-.skills__title {
-    font-size: var(--h3-font-size);
-}
-
-.skills__subtitle {
-    font-size: var(--small-font-size);
-    color: var(--text-color-light);
-}
-
-.skills__arrow {
-    margin-left: auto;
-    transition: .4s;
-}
-
-.skills__list {
-    row-gap: 1.5rem;
-    padding-left: 2.7rem;
-}
-
-.skills__titles {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: var(--mb-0-5);
-}
-
-.skills__bar,
-.skills__percentage {
-    height: 5px;
-    border-radius: .25rem;
-}
-
-.skills__bar {
-    background-color: var(--first-color-lighter);
-}
-
-.skills__percentage {
-    display: block;
-    background-color: var(--first-color);
-}
-
-.skills__html {
-    width: 90%;
-}
 
 /*==================== QUALIFICATION ====================*/
 
@@ -800,7 +805,73 @@ codersrank-skills-chart {
 
 
 /*==================== CONTACT ME ====================*/
+.contact{
+    margin-top: var(--mb-3);
+    margin-bottom: var(--mb-3);
+}
+.contact__container{
+    row-gap: 3rem;
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-2);
+}
 
+.contact__information{
+    display: flex;
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-1);
+    margin-right: var(--mb-0-75);
+}
+
+.contact__icon{
+    font-size: 2rem;
+    color: var(--first-color);
+}
+
+.logo__rank{
+    padding: 0 1rem 0 1rem;
+}
+
+.contact__title{
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.contact__subtitle{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.contact__content{
+    background-color: var(--input-color);
+    border-radius: .5rem;
+    padding: .75rem 1rem .25rem;
+
+}
+
+.contact__input{
+    width: 100%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    border: none;
+    outline: none;
+    padding: .25rem .5rem .5rem 0;
+}
+
+.content__phrase{
+    padding: 1.5rem;
+}
+
+.contact__phrase{
+    font-family: 'Courgette', cursive;
+    font-size: var(--normal-font-size);
+}
+
+.quote{
+    height: 35px;
+    width: 35px;
+}
 
 /*==================== FOOTER ====================*/
 .footer {
@@ -856,6 +927,19 @@ codersrank-skills-chart {
 .footer__link,
 .footer__social {
     color: #FFF;
+}
+
+.container__logo{
+    justify-self: flex-start;
+}
+
+.content__logo__j{
+    text-align: center;
+}
+
+.logo__j{
+    width: 82px;
+    height: 82px;
 }
 
 /*========== SCROLL UP ==========*/
@@ -929,6 +1013,48 @@ codersrank-skills-chart {
         font-size: var(--normal-font-size);
     }
 
+    .skills__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills__card{
+        height: 68px;
+        width: 68px;
+    }
+
+    .about__container{
+        column-gap: 2.5rem;
+    }
+
+    .services__container{
+        grid-template-columns: max-content;
+        justify-content: center;
+    }
+    .services__content{
+        padding-right: 3.5rem;
+    }
+    .services__modal{
+        padding: 0 .5rem;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .skills__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills__card{
+        height: 88px;
+        width: 88px;
+    }
+
+    .blob,
+    .blob2,
+    .blob3{
+        width: 75px;
+        height: 130px;
+    }
 }
 
 /* For medium devices */
@@ -946,11 +1072,17 @@ codersrank-skills-chart {
         justify-self: center;
     }
 
+    .about__container{
+        column-gap: 3.5rem;
+    }
+
     .about__container,
     .portfolio__content,
-    .footer__container {
+    .footer__container,
+    .contact__container{
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 /* For large devices */
@@ -1044,6 +1176,20 @@ codersrank-skills-chart {
         justify-content: initial;
     }
 
+    .services__container{
+        justify-content: center;
+    }
+
+    .services__icon{
+        font-size: 2rem;
+    }
+    .services__content{
+        padding: 6rem 0 2rem 2.5rem;
+    }
+    .services__modal-content{
+        width: 450px;
+    }
+
     .portfolio__img {
         width: 320px;
     }
@@ -1107,6 +1253,10 @@ codersrank-skills-chart {
 
     .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: -4.5rem;
+    }
+
+    .contact__form{
+        width: 460px;
     }
 }
 

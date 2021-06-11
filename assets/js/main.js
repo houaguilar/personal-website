@@ -146,3 +146,60 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Blob
+const container1 = document.querySelector('.blob__container');
+const card1 = document.querySelector('.blob');
+const container2 = document.querySelector('.blob__container2');
+const card2 = document.querySelector('.blob2');
+const container3 = document.querySelector('.blob__container3');
+const card3 = document.querySelector('.blob3');
+
+function mouseEnter(container, card) {
+    container.addEventListener('mouseenter', (e) => {
+        card.style.transition = 'none';
+    });
+}
+
+function mouseMove(container, card) {
+    container.addEventListener('mousemove', (e) => {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 10;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 10;
+        card.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+    });
+}
+
+function mouseLeave(container, card) {
+    container.addEventListener('mouseleave', (e) => {
+        card.style.transition = 'all .5s ease';
+        card.style.transform = 'rotate(0)';
+    });
+}
+
+mouseEnter(container1, card1);
+mouseMove(container1, card1);
+mouseLeave(container1, card1);
+mouseEnter(container2, card2);
+mouseMove(container2, card2);
+mouseLeave(container2, card2);
+mouseEnter(container3, card3);
+mouseMove(container3, card3);
+mouseLeave(container3, card3);
+
+// btn-circle
+const navGreen = document.getElementById('green'),
+    navPurple = document.getElementById('purple'),
+    root = document.documentElement
+
+
+
+if (navGreen){
+    navGreen.addEventListener('click', () => {
+        root.style.setProperty('--hue-color', '142')
+    })
+}
+if (navPurple){
+    navPurple.addEventListener('click', () => {
+        root.style.setProperty('--hue-color', '250')
+    })
+}
